@@ -1,0 +1,120 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to right, #A8E063, #56AB2F); /* Gradien Hijau Hutan */
+    color: #333;
+    overflow: hidden; /* Mencegah scroll saat karakter bergerak */
+}
+
+.container {
+    max-width: 900px;
+}
+
+#game-container {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#maze-grid {
+    border: 2px solid #333;
+    display: grid;
+    /* Ukuran grid akan diatur oleh JS */
+    gap: 0; /* Tidak ada jarak antar sel */
+}
+
+.maze-cell {
+    width: 40px; /* Ukuran setiap sel */
+    height: 40px;
+    background-color: #f0f0f0; /* Warna jalur default */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Pastikan padding/border tidak menambah ukuran */
+}
+
+.wall {
+    background-color: #8B4513; /* Coklat untuk dinding */
+    background-image: url('assets/wall.png'); /* Gambar dinding */
+    background-size: cover;
+    border: 1px solid #654321;
+}
+
+.path {
+    background-color: #D2B48C; /* Krem untuk jalur */
+    /* background-image: url('assets/path.png'); */ /* Opsional: gambar jalur */
+    background-size: cover;
+}
+
+.player {
+    background-image: url('assets/player.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10; /* Pastikan pemain di atas sel */
+}
+
+.start-cell {
+    background-image: url('assets/start.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #D2B48C; /* Warna jalur */
+}
+
+.end-cell {
+    background-image: url('assets/end.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #D2B48C; /* Warna jalur */
+}
+
+.obstacle-gate {
+    background-image: url('assets/obstacle_gate.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #8B4513; /* Warna dinding */
+    border: 1px solid #654321;
+}
+
+.open-gate {
+    background-image: none; /* Hapus gambar gerbang */
+    background-color: #D2B48C; /* Ubah ke warna jalur */
+    border: none;
+}
+
+.progress-bar {
+    background-color: #FFD700; /* Emas */
+}
+
+/* Modal Styling */
+#questionModal .modal-content {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+#questionModal .modal-header {
+    border-bottom: none;
+}
+#questionModal .modal-body {
+    padding-top: 0;
+}
+#modalQuestionText {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+.modal-option-button {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+.modal-option-button.correct {
+    background-color: #28a745;
+    color: white;
+}
+.modal-option-button.wrong {
+    background-color: #dc3545;
+    color: white;
+}
